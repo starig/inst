@@ -39,6 +39,11 @@ class PageController extends Controller
     
     public function acceptedPayment()
     {
-        return view('accepted-payment');
+        return view('acceptedPayment');
+    }
+    
+    public function unacceptedPayment()
+    {
+        return view('unacceptedPayment');
     }
 }

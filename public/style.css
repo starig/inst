@@ -81,3 +81,8 @@ footer{
     color: 	#2E8B57;
     font-size: 250%;
 }
+
+.unacceptedPayment{
+    color: 	red;
+    font-size: 250%;
+}

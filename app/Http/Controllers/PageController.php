@@ -36,4 +36,9 @@ class PageController extends Controller
     {
         return view('balance');
     }
+    
+    public function acceptedPayment()
+    {
+        return view('accepted-payment');
+    }
 }

@@ -11,7 +11,7 @@
         <input type="text" class="form-control accountInputs" placeholder="Логин" name="login" required autofocus>
         <input type="password" class="form-control accountInputs" placeholder="Пароль" name="password" required>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Запомнить меня
+          <input type="checkbox" name="remember"> Запомнить меня
         </label>
           @if($errors->has('login'))
           <p id="error">* Пароль или логин не верны</p>

@@ -19,21 +19,23 @@ Route::get('/', function () {
 
 Route::get('/', 'PageController@index');
 
-Route::get('/order', 'PageController@order');
-
-//Route::get('/login', 'PageController@login');
-
-//Route::get('/registration', 'PageController@registration');
-
-Route::get('/orders', 'PageController@orders');
-
-Route::get('/balance', 'PageController@balance');
 Auth::routes();
 
 Route::get('/logout', function(){
     \Auth::logout();
     
     return redirect()->route('login');
+});
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::get('/order', 'PageController@order');
+    
+    Route::get('/balance', 'PageController@balance');
+    
+    Route::get('/orders', 'PageController@orders');
+    
+    Route::get('/accepted-payment', 'PageController@accepted-payment');
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');

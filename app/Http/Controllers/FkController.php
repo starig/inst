@@ -22,7 +22,7 @@ class FkController extends Controller
             die('wrong sign');
         }
 
-        $user = User::find($request->us_user_login);
+        $user = User::where('login', $request->us_user_login)->first();
         if (!$user) {
             die('Not found user');
         }

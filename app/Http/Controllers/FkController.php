@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Log;
+use App\Payment;
 
 class FkController extends Controller
 {
@@ -33,9 +33,20 @@ class FkController extends Controller
             die('Not found user');
         }
 
+        $payment = Payment::where('intid', $request->intid)->first();
+        if ($payment) {
+            die('YES');
+        }
+
         // обновление баланса
         $user->amount = $user->amount + $request->AMOUNT;
         $user->save();
+
+        Payment::create([
+            'login' => $request->MERCHANT_ORDER_ID,
+            'intid' => $request->intid,
+            'amount' => $request->AMOUNT
+        ]);
 
         die('YES');
     }

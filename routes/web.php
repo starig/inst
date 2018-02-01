@@ -36,4 +36,6 @@ Route::get('/logout', function(){
     return redirect()->route('login');
 });
 
+Route::post('/free-kassa-result', 'FkController@result');
+
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -18,4 +18,5 @@
         <div class="col-md-6">
             <p>Просто текст</p>
         </div>
+    </div>
 @endsection

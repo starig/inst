@@ -30,7 +30,8 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       @if(\Auth::check())
-                    <li class=""><a href="/balance">Баланс: 0</a></li>
+                    <li class="dropdown-header">{{ \Auth::user()->login }}</li>
+                    <li class=""><a href="/balance">Баланс: {{ \Auth::user()->amount }}</a></li>
                     <li><a href="/orders">Заказы</a></li>
                       @endif
                     <li class="divider"></li>

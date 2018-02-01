@@ -48,9 +48,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         $messages = [
-            'regex' => 'Логин должен состоять из латинских букв (можно цифры и нижнее подчеркивание)',
-            'confirmed' => 'Пароли не совпадают',
-            'min' => 'Пароль должен быть не менее 6 символов'
+            'regex' => '* Логин должен состоять из латинских букв (допускаются цифры и нижнее подчеркивание)',
+            'confirmed' => '* Пароли не совпадают',
+            'min' => '* Пароль должен быть не менее 6 символов'
         ];
         
         return Validator::make($data, [

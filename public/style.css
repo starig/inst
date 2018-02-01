@@ -1,0 +1,78 @@
+.imgCases{
+    width: 140px;
+    height: 140px;
+}
+
+#header{
+    margin-top: 20px;
+}
+
+#orderCreater{
+    margin-top: 60px;
+}
+
+#orderPlace{
+    width: 80%;
+    height: 500px;
+}
+
+#shopList{
+    width: 300px;
+}
+
+#orderQt{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+footer{
+    text-align: center;
+}
+
+#myOrdersTable{
+    margin-top: 60px;
+}
+
+.navbar{
+    border-radius: 4px !important;
+}
+
+.navbar-right {
+    padding-right: 25px;
+}
+
+#login{
+    width: 300px;
+}
+
+.checkbox{
+    margin-left: 20px;
+}
+
+#error{
+    color: red;
+}
+
+.accountInputs{
+    margin-bottom: 5px;
+}
+
+#caseMargin{
+    overflow: hidden;
+}
+
+#prize{
+    width: 5px;
+}
+
+#prize.animate{
+    margin-left: -174px;
+    transition-property: margin-left;
+    transition-duration: 9s;
+    transition-timing-function: linear;
+}
+
+.logoImg{
+    width: 100px;
+    height: 25px;
+}

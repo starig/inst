@@ -35,7 +35,9 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/orders', 'PageController@orders');
     
-    Route::get('/accepted-payment', 'PageController@accepted-payment');
+    Route::get('/free-kassa-success', 'PageController@acceptedPayment');
 });
+
+Route::post('/free-kassa-result', 'FkController@result');
 
 //Route::get('/home', 'HomeController@index')->name('home');

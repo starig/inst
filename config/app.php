@@ -14,6 +14,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'fk_merchant_id' => env('FK_MERCHANT_ID', ''),
+    'fk_secret1' => env('FK_SECRET1', ''),
+    'fk_secret2' => env('FK_SECRET2', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

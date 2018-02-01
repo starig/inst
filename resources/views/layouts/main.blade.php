@@ -60,6 +60,7 @@
       <footer @if(\Request::path() != '/')class="navbar-fixed-bottom row-fluid" @endif>
         <p class="pull-right"><a href="#">Наверх</a></p>
         <p>&copy; 2018 StaRIG</p>
+        <p><a href="//www.free-kassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/22.png"></a></p>
       </footer>
 
     </div><!-- /.container -->

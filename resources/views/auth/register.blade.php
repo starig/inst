@@ -12,7 +12,7 @@
       <form class="form-signin" role="form" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
         <h2 class="form-signin-heading">Создайте учетную запись</h2>
-        <input type="text" class="form-control accountInputs" placeholder="Логин" name="login" required autofocus>
+        <input type="text" class="form-control accountInputs" placeholder="Логин" name="login" required autofocus value="{{ old('login', '') }}">
         @if ($errors->has('login'))
         <p id="error">{{ $errors->first('login') }}</p>
         @endif

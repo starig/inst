@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -47,11 +47,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'regex' => 'Логин должен состоять из латинских букв (можно цифры и нижнее подчеркивание)',
+            'confirmed' => 'Пароли не совпадают',
+            'min' => 'Пароль должен быть не менее 6 символов'
+        ];
+        
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'login' => [
+                'required',
+                'string', 
+                'max:150', 
+                'unique:users',
+                'regex:/[a-zA-Z0-9_]+/'
+            ],
             'password' => 'required|string|min:6|confirmed',
-        ]);
+        ], $messages);
     }
 
     /**
@@ -63,9 +74,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'login' => $data['login'],
             'password' => bcrypt($data['password']),
+            'amount' => 0,
+            'role' => 1
         ]);
     }
 }

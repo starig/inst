@@ -37,7 +37,7 @@
                       @if(!\Auth::check())
                       <li class="dropdown-header">Вход/Регистрация</li>
                     <li><a href="/login">Войти</a></li>
-                    <li><a href="/registration">Зарегистрироваться</a></li>
+                    <li><a href="/register">Зарегистрироваться</a></li>
                       @endif
                       @if(\Auth::check())
                     <li><a href="/logout">Выйти</a></li>

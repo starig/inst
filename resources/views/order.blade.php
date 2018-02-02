@@ -8,6 +8,7 @@
     <div class="container marketing">
 
         <div id="shopList">
+            <input class="form-control orderQt" type="text" placeholder="Ссылка на аккаунт">
             Выберите что накручивать:
             <select class="form-control">
                 <option>Лайки</option>
@@ -15,7 +16,8 @@
                 <option>Просмотры</option>
                 <option>Охват</option>
             </select>
-            <input class="form-control" type="text" placeholder="Количество" id="orderQt">
+            <input class="form-control orderQt" type="text" placeholder="Количество">
+            
             <p>Цена: 0</p>
             <button type="button" class="btn btn-danger">Заказать</button>
         </div>

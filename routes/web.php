@@ -42,4 +42,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::post('/free-kassa-result', 'FkController@result');
 
+Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'] ], function () {
+    Route::get('/', 'PageController@index')->name('admin.index');
+});
+
 //Route::get('/home', 'HomeController@index')->name('home');

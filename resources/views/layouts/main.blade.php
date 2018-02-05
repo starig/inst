@@ -45,6 +45,9 @@
                       @endif
                   </ul>
                 </li>
+                @if(\Auth::check() && \Auth::user()->role == 2)
+                <li><a href="/web-admin">Админка</a></li>
+                @endif
               </ul>
             </div>
           </div>

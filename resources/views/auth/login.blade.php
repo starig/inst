@@ -10,6 +10,7 @@
         <h2 class="form-signin-heading">Вход в учетную запись</h2>
         <input type="text" class="form-control accountInputs" placeholder="Логин" name="login" required autofocus>
         <input type="password" class="form-control accountInputs" placeholder="Пароль" name="password" required>
+          <a href="/register">Зарегистрироваться</a>
         <label class="checkbox">
           <input type="checkbox" name="remember"> Запомнить меня
         </label>

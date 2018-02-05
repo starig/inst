@@ -44,6 +44,8 @@ Route::post('/free-kassa-result', 'FkController@result');
 
 Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'] ], function () {
     Route::get('/', 'PageController@index')->name('admin.index');
+    Route::get('/messages', 'PageController@messages');
+    Route::get('/types-of-promotions', 'PageController@typesOfPromotions');
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');

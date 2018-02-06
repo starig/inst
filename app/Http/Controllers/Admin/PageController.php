@@ -21,10 +21,4 @@ class PageController extends Controller
         ]);
     }
     
-    public function typesOfPromotions()
-    {
-        return view('admin.typesOfPromotions', [
-            'tab' => 'prices'
-        ]);
-    }
 }

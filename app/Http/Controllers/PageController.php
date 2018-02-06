@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Price;
 
 class PageController extends Controller
 {
@@ -14,7 +15,10 @@ class PageController extends Controller
     
     public function order()
     {
-        return view('order');
+        return view('order', [
+            'prices' => Price::orderBy('id')->get()
+        ]);
+        
     }
     
     public function login()

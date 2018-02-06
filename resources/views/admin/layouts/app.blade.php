@@ -39,13 +39,14 @@
 <!-- Main Layout Stylesheet -->
 <link rel="stylesheet" href="/admin/assets/css/fonts/icomoon/style.css" media="screen">
 <link rel="stylesheet" href="/admin/assets/css/main-style.css" media="screen">
+@yield('styles')
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<title>MoonCake :: Responsive Admin Template</title>
+<title>Inst admin</title>
 
 </head>
 
@@ -147,6 +148,9 @@
                                         </span>
                                     	<ul class="inner-nav">
                                         	<li @if(\Request::path() == 'web-admin/types-of-promotions')class="active" @endif><a href="/web-admin/types-of-promotions"><i class="icol-cog"></i>Типы накруток</a></li>
+                                            <li @if(\Request::path() == 'web-admin/add-promotion')class="active" @endif>
+                                                <a href="/web-admin/add-promotion"><i class="icol-add"></i>Добавить тип накрутки</a>
+                                            </li>
                                             
                                         </ul>
                                     </li>
@@ -224,7 +228,10 @@
     
     <!-- Demo Scripts -->
     <script src="/admin/assets/js/demo/dashboard.js"></script>
-
+    <script>
+        var csrf_token = '{{ csrf_token() }}';
+    </script>
+    @yield('scripts')
 </body>
 
 </html>

@@ -1,5 +1,11 @@
 @extends('admin.layouts.app')
 
+@section('styles')
+
+<link rel="stylesheet" href="/admin/plugins/msgbox/jquery.msgbox.css" media="screen">
+
+@endsection
+
 @section('content')
     <div id="main-header" class="page-header">
                             	<ul class="breadcrumb">
@@ -28,33 +34,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($prices as $price)
                                         <tr>
-                                            <th>1</th>
-                                            <th>Лайки</th>
-                                            <th>5 рублей</th>
-                                            <th><span type="button"><i class="icol-pencil"></i></span>
+                                            <th>{{ $price->id }}</th>
+                                            <th>{{ $price->name }}</th>
+                                            <th>{{ $price->price }} рублей</th>
+                                            <th>
                                                 <span type="button"><i class="icol-cancel"></i></span>
                                             </th>
                                         </tr>
-                                        <tr>
-                                            <th>2</th>
-                                            <th>Подписчики</th>
-                                            <th>15 рублей</th>
-                                            <th><span type="button"><i class="icol-pencil"></i></span>
-                                                <span type="button"><i class="icol-cancel"></i></span>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>3</th>
-                                            <th>Охват</th>
-                                            <th>25 рублей</th>
-                                            <th><span type="button"><i class="icol-pencil"></i></span>
-                                                <span type="button"><i class="icol-cancel"></i></span>
-                                            </th>
-                                        </tr>
+                                        @endforeach
+                                        
                                     </tbody>
                                 </table>
-                                <button class="btn">Добавить тип накрутки</button>
+                                <div class="span6">
+                                    <a class="btn btn-primary" href="{{ route('admin.promotion_link') }}" >Добавить</a>
+                                </div>
                                 
                             </div>
+@endsection
+
+@section('scripts')
+   <!-- msgBox -->
+    <script src="/admin/plugins/msgbox/jquery.msgbox.min.js"></script> 
+    <script src="/admin/js/add_promotions.js?v={{ config('app.script_version') }}" ></script> 
 @endsection

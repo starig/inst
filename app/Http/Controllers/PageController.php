@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Price;
+
 
 class PageController extends Controller
 {
@@ -11,14 +11,6 @@ class PageController extends Controller
     {
         return view('index', [
         ]);
-    }
-    
-    public function order()
-    {
-        return view('order', [
-            'prices' => Price::orderBy('id')->get()
-        ]);
-        
     }
     
     public function login()

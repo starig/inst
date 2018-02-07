@@ -26,6 +26,8 @@ class Promotions extends Controller
         $this->validate($request, [
             'name' => 'required|unique:prices|max:50',
             'price' => 'required|integer',
+            'min_count' => 'required|integer',
+            'max_count' => 'required|integer',
         ], $messages);
         
         Price::create($request->all());

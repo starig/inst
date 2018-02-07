@@ -43,6 +43,24 @@
                                                         @endif
 													</div>
 												</div>
+                                                <div class="control-group @if($errors->first('min_count'))error @endif">
+													<label class="control-label">Минимальное кол-во <span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" name="min_count" class="span4">
+                                                        @if($errors->first('min_count'))
+                                                        <label generated="true" class="error help-block">{{ $errors->first('min_count') }}</label>
+                                                        @endif
+													</div>
+												</div>
+                                                <div class="control-group @if($errors->first('max_count'))error @endif">
+													<label class="control-label">Максимальное кол-во <span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" name="max_count" class="span4">
+                                                        @if($errors->first('max_count'))
+                                                        <label generated="true" class="error help-block">{{ $errors->first('max_count') }}</label>
+                                                        @endif
+													</div>
+												</div>
 												
 												
 												<div class="form-actions">

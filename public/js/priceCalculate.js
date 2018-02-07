@@ -20,3 +20,7 @@ function calculatePrice(){
     
     $("#promotionPrice").html("Цена: " + price.toFixed(2));
 }
+
+function calculateCount(){
+    var minCount = $("#price option:")
+}

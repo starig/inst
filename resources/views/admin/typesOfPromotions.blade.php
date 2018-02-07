@@ -30,6 +30,7 @@
                                             <th>ID</th>
                                             <th>Тип</th>
                                             <th>Цена(за 10)</th>
+                                            <th>Мин.-Макс. кол-во</th>
                                             <th>Редактирование</th>
                                         </tr>
                                     </thead>
@@ -39,6 +40,7 @@
                                             <th>{{ $price->id }}</th>
                                             <th>{{ $price->name }}</th>
                                             <th>{{ $price->price }} рублей</th>
+                                            <th>{{ $price->min_count }} - {{ $price->max_count }}</th>
                                             <th>
                                                 <span type="button"><i class="icol-cancel"></i></span>
                                             </th>

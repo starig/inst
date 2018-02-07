@@ -29,7 +29,8 @@ Route::get('/logout', function(){
 
 Route::middleware(['auth'])->group(function () {
     
-    Route::get('/order', 'PageController@order');
+    Route::get('/order', 'OrderController@index');
+    Route::post('/order', 'OrderController@add');
     
     Route::get('/balance', 'PageController@balance');
     

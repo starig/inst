@@ -15,7 +15,7 @@
             Выберите что накручивать:
             <select name="price" id="prices" class="form-control">
                 @foreach($prices as $price)
-                <option data-price="{{ $price->price }}" class="optionPrices" value="{{ $price->id }}">{{ $price->name }}</option>
+                <option data-min="{{ $price->min_count }}" data-max="{{ $price->max_count }}" data-price="{{ $price->price }}" class="optionPrices" value="{{ $price->id }}">{{ $price->name }}</option>
                 @endforeach
             </select>
             <input name="count" class="form-control orderQt" type="number" value="100" placeholder="Количество" id="valueOfOrder">
@@ -30,7 +30,7 @@
         </div>
         
         <div class="col-md-6">
-            <p>Мин</p>
+            <p id="min_max_countes"></p>
         </div>
 @endsection
         

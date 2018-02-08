@@ -26,6 +26,7 @@
                 @if(\Auth::check())
                 <li @if(\Request::path() == 'order')class="active" @endif><a href="/order">Сделать заказ</a></li>
                 @endif
+                <li @if(\Request::path() == 'contact')class="active" @endif><a href="/contact">Тех. поддержка</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <b class="caret"></b></a>
                   <ul class="dropdown-menu">

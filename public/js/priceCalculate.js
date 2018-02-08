@@ -1,7 +1,10 @@
 $(document).ready(function(){
     calculatePrice();
+    calculateCount();
+    
     $("#prices").change(function(){
         calculatePrice();
+        calculateCount();
     });
     
     $("#valueOfOrder").change(function(){
@@ -22,5 +25,9 @@ function calculatePrice(){
 }
 
 function calculateCount(){
-    var minCount = $("#price option:")
+    var minCount = $("#prices option:selected").data("min");
+    
+    var maxCount = $("#prices option:selected").data("max");
+    
+    $("#min_max_countes").html("Допустимый диапозон накрутки: " + minCount + " - " + maxCount);
 }

@@ -39,6 +39,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/free-kassa-success', 'PageController@acceptedPayment');
     
     Route::get('/free-kassa-fail', 'PageController@unacceptedPayment');
+    
+    Route::get('/contact', 'PageController@messages');
 });
 
 Route::post('/free-kassa-result', 'FkController@result');

@@ -42,4 +42,9 @@ class PageController extends Controller
     {
         return view('unacceptedPayment');
     }
+    
+    public function messages()
+    {
+        return view('messages');
+    }
 }

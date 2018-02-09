@@ -23,11 +23,6 @@ class PageController extends Controller
         return view('registration');
     }
     
-    public function orders()
-    {
-        return view('orders');
-    }
-    
     public function balance()
     {
         return view('balance');

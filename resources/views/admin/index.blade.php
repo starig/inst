@@ -31,30 +31,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="error">
-                                            <td>1</td>
-                                            <td>starig</td>
-                                            <td><a href="https://instagram.com/ioannstar">Профиль</a></td>
-                                            <td>Лайки</td>
-                                            <td>550</td>
-                                            <td><button class="btn btn-default">Выполнил</button></td>
+                                        @foreach($orders as $order)
+                                        <tr class="@if($order->is_completed) success @else error @endif">
+                                            <td>{{ $order->id }}</td>
+                                            <td>{{ $order->user->login }}</td>
+                                            <td><a href="{{ $order->link }}">Профиль</a></td>
+                                            <td>{{ $order->price->name }}</td>
+                                            <td>{{ $order->count }}</td>
+                                            <td><button class="btn btn-default">@if($order->is_completed)Отменить @else Выполнил @endif</button></td>
                                         </tr>
-                                        <tr class="success">
-                                            <td>2</td>
-                                            <td>starig</td>
-                                            <td><a href="https://instagram.com/ioannstar">Профиль</a></td>
-                                            <td>Подписчики</td>
-                                            <td>550</td>
-                                            <td><button class="btn btn-default">Выполнил</button></td>
-                                        </tr>
-                                        <tr class="success">
-                                            <td>3</td>
-                                            <td>starig</td>
-                                            <td><a href="https://instagram.com/ioannstar">Профиль</a></td>
-                                            <td>Охват</td>
-                                            <td>550</td>
-                                            <td><button class="btn btn-default">Выполнил</button></td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

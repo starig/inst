@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/balance', 'PageController@balance');
     
-    Route::get('/orders', 'PageController@orders');
+    Route::get('/orders', 'OrderController@orders')->name('orders');
     
     Route::get('/free-kassa-success', 'PageController@acceptedPayment');
     

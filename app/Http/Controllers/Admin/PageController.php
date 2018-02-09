@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Order;
 
 class PageController extends Controller
 {
     public function index()
     {
         return view('admin.index', [
-            'tab' => 'main'
+            'tab' => 'main',
+            'orders' => Order::orderBy('id', 'dest')->get(),
         ]);
     }
     

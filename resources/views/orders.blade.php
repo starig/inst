@@ -10,7 +10,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Заказ</th>
                         <th>Тип</th>
                         <th>Количество</th>
@@ -19,14 +18,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr class="danger">   
-                    <td>1</td>
-                    <td>2133</td>
-                    <td>Лайки</td>
-                    <td>1000</td>
-                    <td>01.01.1970</td>
-                    <td>Выполняется</td>
+                  @foreach($orders as $order)
+                  <tr class="@if($order->is_completed) success @else danger @endif">   
+                    <td>{{ $order->id }}</td>
+                    <td>{{ $order->price->name }}</td>
+                    <td>{{ $order->count }}</td>
+                    <td>{{ date('d.m.Y', strtotime($order->created_at)) }}</td>
+                    <td>@if($order->is_completed)Закончен @else Выполняется @endif</td>
                   </tr>
+                  @endforeach
+                  <!--
                   <tr class="success">   
                     <td>2</td>
                     <td>2134</td>
@@ -35,6 +36,7 @@
                     <td>01.01.1970</td>
                     <td>Закончен</td>
                   </tr>
+                  -->
                 </tbody>
             </table>
         </div>

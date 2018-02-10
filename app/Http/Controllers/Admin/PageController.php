@@ -5,21 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Message;
 
 class PageController extends Controller
 {
-    public function index()
-    {
-        return view('admin.index', [
-            'tab' => 'main',
-            'orders' => Order::orderBy('id', 'dest')->get(),
-        ]);
-    }
-    
     public function messages()
     {
         return view('admin.messages', [
-            'tab' => 'main'
+            'tab' => 'main',
+            'messages' => Message::orderBy('id', 'dest')->get(),
         ]);
     }
     

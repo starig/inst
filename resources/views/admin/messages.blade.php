@@ -18,7 +18,24 @@
                             </div>
                             
                             <div id="main-content">
-                            	
+                            	<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Имя пользователя</th>
+                                            <th>Сообщение</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($messages as $message)
+                                        <tr>
+                                            <td>{{ date('d.m.Y', strtotime($message->created_at)) }}</td>
+                                            <td>{{ $message->user->login }}</td>
+                                            <td><textarea style="width: 100%">{{ $message->message }}</textarea></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                                 
                             </div>
 @endsection

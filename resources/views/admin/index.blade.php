@@ -38,10 +38,14 @@
                                             <td><a href="{{ $order->link }}">Профиль</a></td>
                                             <td>{{ $order->price->name }}</td>
                                             <td>{{ $order->count }}</td>
-                                            <td><button class="btn btn-default">@if($order->is_completed)Отменить @else Выполнил @endif</button></td>
+                                            <td><button class="btn btn-default j-btn-ready" data-ready="{{ $order->is_completed }}" data-order-id="{{ $order->id }}">@if($order->is_completed)Отменить @else Выполнил @endif</button></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
+@endsection
+
+@section('scripts') 
+    <script src="/admin/js/orders.js?v={{ config('app.script_version') }}" ></script> 
 @endsection

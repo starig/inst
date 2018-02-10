@@ -1,9 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('styles')
-
-<link rel="stylesheet" href="/admin/plugins/msgbox/jquery.msgbox.css" media="screen">
-
 @endsection
 
 @section('content')
@@ -37,13 +34,14 @@
                                     <tbody>
                                         @foreach($prices as $price)
                                         <tr>
-                                            <th>{{ $price->id }}</th>
-                                            <th>{{ $price->name }}</th>
-                                            <th>{{ $price->price }} рублей</th>
-                                            <th>{{ $price->min_count }} - {{ $price->max_count }}</th>
-                                            <th>
-                                                <span type="button"><i class="icol-cancel"></i></span>
-                                            </th>
+                                            <td>{{ $price->id }}</td>
+                                            <td>{{ $price->name }}</td>
+                                            <td>{{ $price->price }} рублей</td>
+                                            <td>{{ $price->min_count }} - {{ $price->max_count }}</td>
+                                            <td>
+                                                <span type="button"><a href="{{ route('admin.promotion.edit', $price) }}"><i class="icol-pencil"></i></a></span>
+                                                <span type="button"><a href="#" class="j-del-promo" data-price-id="{{ $price->id }}"><i class="icol-delete"></i></a></span>
+                                            </td>
                                         </tr>
                                         @endforeach
                                         
@@ -56,8 +54,6 @@
                             </div>
 @endsection
 
-@section('scripts')
-   <!-- msgBox -->
-    <script src="/admin/plugins/msgbox/jquery.msgbox.min.js"></script> 
-    <script src="/admin/js/add_promotions.js?v={{ config('app.script_version') }}" ></script> 
+@section('scripts') 
+    <script src="/admin/js/promotions.js?v={{ config('app.script_version') }}" ></script> 
 @endsection

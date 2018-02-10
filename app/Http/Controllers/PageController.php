@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Message;
 
 
 class PageController extends Controller
@@ -41,5 +42,16 @@ class PageController extends Controller
     public function messages()
     {
         return view('messages');
+    }
+    
+    public function messageAdd(Request $request)
+    {
+        $message = new Message();
+        $message->user_id = \Auth::user()->id;
+        $message->message = $request->message;
+        $message->save();
+        return response()->json([
+            'result' => 'ok',
+        ]);
     }
 }

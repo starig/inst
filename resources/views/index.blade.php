@@ -21,7 +21,7 @@
             <div class="carousel-caption">
               <h1>Наш сервис позволяет быстро поднять в топ ваш аккаунт</h1>
               <p>На ваш аккаунт подписывается большое количество пользователей за указанный срок</p>
-              <p><a class="btn btn-lg btn-danger" href="#" role="button">Сделать заказ</a></p>
+              <p><a class="btn btn-lg btn-danger" href="/order" role="button">Сделать заказ</a></p>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
             <div class="carousel-caption">
               <h1>Сотни довольных клиентов</h1>
               <p>Более 500 человек уже в топе инстаграма</p>
-              <p><a class="btn btn-lg btn-danger" href="#" role="button">Пополнить баланс</a></p>
+              <p><a class="btn btn-lg btn-danger" href="/balance" role="button">Пополнить баланс</a></p>
             </div>
           </div>
         </div>

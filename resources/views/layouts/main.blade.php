@@ -25,8 +25,8 @@
                 <li @if(\Request::path() == '/')class="active" @endif><a href="/">Главная</a></li>
                 @if(\Auth::check())
                 <li @if(\Request::path() == 'order')class="active" @endif><a href="/order">Сделать заказ</a></li>
-                @endif
                 <li @if(\Request::path() == 'contact')class="active" @endif><a href="/contact">Тех. поддержка</a></li>
+                @endif
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -46,6 +46,9 @@
                       @endif
                   </ul>
                 </li>
+                @if(\Auth::check())
+                  <li class=""><a href="/balance">Пополнить баланс</a></li>
+                @endif
                 @if(\Auth::check() && \Auth::user()->role == 2)
                 <li><a href="/web-admin">Админка</a></li>
                 @endif

@@ -47,7 +47,8 @@
                   </ul>
                 </li>
                 @if(\Auth::check())
-                  <li class=""><a href="/balance">Пополнить баланс</a></li>
+                  <li @if(\Request::path() == 'balance')class="active" @endif><a href="/balance">Пополнить баланс</a></li>
+                  <li @if(\Request::path() == 'cases')class="active" @endif><a href="/cases">Кейсы</a></li>
                 @endif
                 @if(\Auth::check() && \Auth::user()->role == 2)
                 <li><a href="/web-admin">Админка</a></li>

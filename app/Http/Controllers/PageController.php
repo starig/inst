@@ -44,6 +44,11 @@ class PageController extends Controller
         return view('messages');
     }
     
+    public function cases()
+    {
+        return view('cases');
+    }
+    
     public function messageAdd(Request $request)
     {
         $message = new Message();

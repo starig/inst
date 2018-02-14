@@ -42,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/contact', 'PageController@messages');
     Route::post('/contact', 'PageController@messageAdd');
+    
+    Route::get('/cases', 'PageController@cases');
 });
 
 Route::post('/free-kassa-result', 'FkController@result');

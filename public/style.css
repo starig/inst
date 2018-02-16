@@ -66,7 +66,7 @@ footer{
 }
 
 #prize{
-    width: 5px;
+    font-size: 150%;
 }
 
 #prize.animate{
@@ -114,11 +114,8 @@ footer{
     margin-top: 5px;
 }
 
-#prize{
-    font-size: 200%;
-    
-}
 
 #caseBody{
-    text-align: center;
+    margin: 0 auto;
+    display: block;
 }

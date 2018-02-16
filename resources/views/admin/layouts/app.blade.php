@@ -106,6 +106,7 @@
                                         </span>
                                     	<ul class="inner-nav">
                                         	<li @if(\Request::path() == 'web-admin')class="active" @endif><a href="/web-admin"><i class="icol-grid"></i> Заказы</a></li>
+                                            <li @if(\Request::path() == 'web-admin/caseOrders')class="active" @endif><a href="/web-admin/caseOrders"><i class="icol-grid"></i> Заказы(кейсы)</a></li>
                                         	<li @if(\Request::path() == 'web-admin/messages')class="active" @endif><a href="/web-admin/messages"><i class="icol-email"></i> Сообщения</a></li>
                                             
                                         </ul>
@@ -123,7 +124,22 @@
                                             
                                         </ul>
                                     </li>
-                                	
+                                	<li @if($tab == 'cases') class="active" @endif>
+                                    	<span title="Table">
+                                    		<i class="icon-briefcase"></i>
+											<span class="nav-title">Кейсы</span>
+                                        </span>
+                                    	<ul class="inner-nav">
+                                        	<li @if(\Request::path() == 'web-admin/cases')class="active" @endif>
+                                                <a href="/web-admin/cases"><i class="icol-cog"></i>Все кейсы</a>
+                                            </li>
+                                            <li @if(\Request::path() == 'web-admin/add-case')class="active" @endif>
+                                                <a href="/web-admin/add-case"><i class="icol-add"></i>Добавить кейс</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+                                    
                                 </ul>
                             </nav>
                         </aside>
@@ -139,8 +155,7 @@
         </div>
         
         <footer id="footer">
-            <div class="footer-left">MoonCake - Responsive Admin Template</div>
-            <div class="footer-right"><p>Copyright 2012. All Rights Reserved.</p></div>
+            <div class="footer-left"><p>StaRIG @2018</p></div>
         </footer>
         
     </div>

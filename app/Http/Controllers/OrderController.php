@@ -74,4 +74,11 @@ class OrderController extends Controller
             'orders' => Order::where('user_id', \Auth::user()->id)->orderBy('id', 'dest')->get()
         ]);
     }
+    
+    public function prizes()
+    {
+        return view('prizes', [
+            'orders' => Order::where('user_id', \Auth::user()->id)->orderBy('id', 'dest')->get()
+        ]);
+    }
 }

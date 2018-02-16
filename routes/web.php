@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/balance', 'PageController@balance');
     
     Route::get('/orders', 'OrderController@orders')->name('orders');
+    Route::get('/prizes', 'OrderController@prizes')->name('prizes');
     
     Route::get('/free-kassa-success', 'PageController@acceptedPayment');
     
@@ -50,8 +51,11 @@ Route::post('/free-kassa-result', 'FkController@result');
 
 Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'] ], function () {
     Route::get('/', 'OrderController@index')->name('admin.index');
+    Route::get('/caseOrders', 'CasesController@caseOrders')->name('admin.caseOrders');
     Route::get('/messages', 'PageController@messages');
     Route::get('/types-of-promotions', 'Promotions@index')->name('admin.promotions');
+    Route::get('/cases', 'CasesController@cases')->name('admin.cases');
+    Route::get('/add-case', 'CasesController@addCase')->name('admin.addCase');
     Route::get('/add-promotion', 'Promotions@addPromotion')->name('admin.promotion_link');
     Route::post('/types-of-promotions/add', 'Promotions@add')->name('admin.addPromotion');
     Route::get('/types-of-promotions/edit/{price}', 'Promotions@edit')->name('admin.promotion.edit');

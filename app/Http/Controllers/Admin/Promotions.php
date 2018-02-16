@@ -32,6 +32,15 @@ class Promotions extends Controller
             'max_count' => 'required|integer',
         ], $messages);
         
+        $errors = [];
+        if ($request->min_count > $request->max_count) {
+            $errors['min_count'] = 'Минимальное значение должно быть меньше максимального';
+        }
+        
+        if (!empty($errors)) {
+            return redirect()->back()->withInput()->withErrors($errors);
+        }
+        
         Price::create($request->all());
         
         return redirect()->route('admin.promotions');

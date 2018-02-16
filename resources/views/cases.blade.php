@@ -60,12 +60,17 @@
               </div>
               <div class="modal-body" id="caseBody">
                 <div id="prize">
-                    5
+                    Откройте кейс!
                   </div>
+                  <p>Ваш баланс: {{ \Auth::user()->amount }}</p>
+                    <form method="post">
+                        <input name="link" id="caseAccountLink" class="form-control orderQt" type="text" placeholder="Ссылка на аккаунт" value="{{ old('link', '') }}"/>
+                    </form>
+                  <p class="error" id="caseError" style="display: none">Введите ссылку на аккаунт *</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary" id="openCase">Открыть кейс</button>
+                <button type="button" class="btn btn-primary" id="openCaseBtn">Открыть кейс</button>
               </div>
             </div>
           </div>
@@ -80,11 +85,22 @@
         
         <script>
             $(document).ready(function(){
-                $("#openCase").click(function(){
+                $("#openCaseBtn").click(function(){
+                    $(this).prop('disabled', true);
+                    $("#caseError").hide();
+                    // если ссылки нет
+                    if(!$('#caseAccountLink').val()){
+                       $("#caseError").html("Введите ссылку на аккаунт *").show();
+                       $(this).prop('disabled', false);
+                       return false;
+                    }
+                    // показываем ошибку, return false
+                    // если ссылка не правильная
+                    // показываем ошибку другую, return false
                     var i = 6;
                     var interval = setInterval(function(){
                         i--;
-                        $("#prize").html(i);
+                        $("#prize").html("Открытие кейса через: " + i);
                         if(i == 0){
                             clearInterval(interval);
                              $("#prize").html("Ваш выигрыш: " + randomInteger(20, 100));
@@ -95,6 +111,7 @@
                 function randomInteger(min, max) {
                     var rand = min - 0.5 + Math.random() * (max - min + 1)
                     rand = Math.round(rand);
+                    $("#openCaseBtn").prop('disabled', false);
                     return rand;
                   }
             })

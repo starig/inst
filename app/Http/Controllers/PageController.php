@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\MyCase;
 
 
 class PageController extends Controller
@@ -46,7 +47,10 @@ class PageController extends Controller
     
     public function cases()
     {
-        return view('cases');
+        return view('cases', [
+            'cases' => MyCase::get(),
+        ]);
+        
     }
     
     public function messageAdd(Request $request)

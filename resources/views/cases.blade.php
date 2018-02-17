@@ -32,23 +32,13 @@
             </div>-->
         
         <div class="row">
-                <div class="col-lg-4">
-                  <img class="img-circle" src="/img/3.jpg" alt="Generic placeholder image">
-                  <h2>Кейс нейм</h2>
-                  <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">Открыть &raquo;</a></p>
-                </div>
-            
+                @foreach($cases as $case)
                 <div class="col-lg-4">
                   <img class="img-circle" src="/img/3.jpg">
-                  <h2>Кейс нейм</h2>
+                  <h3>{{ $case->name }}</h3>
                   <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">Открыть &raquo;</a></p>
                 </div>
-            
-                <div class="col-lg-4">
-                  <img class="img-circle" src="/img/3.jpg" alt="Generic placeholder image">
-                  <h2>Кейс нейм</h2>
-                  <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">Открыть &raquo;</a></p>
-                </div>
+                @endforeach
       </div>
         
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -13,7 +13,7 @@
                                 </ul>
                                 
                                 <h1 id="main-heading">
-                                	Заказы
+                                	Кейсы
                                 </h1>
                             </div>
                             
@@ -23,6 +23,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Название</th>
                                             <th>Тип</th>
                                             <th>Цена за 1 кейс</th>
                                             <th>Диапозон выйгрыша</th>
@@ -31,23 +32,44 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>7</td>
-                                            <td>Лайки</td>
-                                            <td>100 рублей</td>
-                                            <td>10-50</td>
+                                            @foreach($cases as $case)
+                                            <td>{{ $case->id }}</td>
+                                            <td>{{ $case->name }}</td>
+                                            <td>{{ $case->pricetbl->name }}</td>
+                                            <td>{{ $case->price }} рублей</td>
+                                            <td>{{ $case->min_count }} - {{ $case->max_count }}</td>
                                             <td>
-                                                <span type="button"><a href=""><i class="icol-pencil"></i></a></span>
-                                                <span type="button"><a href="#" class="j-del-promo" data-price-id=""><i class="icol-delete"></i></a></span>
+                                                <span type="button"><a href="{{ route('admin.cases.edit', $case) }}"><i class="icol-pencil"></i></a></span>
+                                                <span type="button"><a href="#" class="j-del-promo"  data-case-id="{{ $case->id }}"><i class="icol-delete"></i></a></span>
                                             </td>
                                         </tr>
+                                            @endforeach
                                     </tbody>
                                 </table>
                                 
                                 <div class="span6">
-                                    <a class="btn btn-primary" href="{{ route('admin.promotion_link') }}" >Добавить</a>
+                                    <a class="btn btn-primary" href="{{ route('admin.addCase') }}" >Добавить</a>
                                 </div>
                             </div>
 @endsection
 
-@section('scripts') 
+@section('scripts')
+<script>
+$(document).ready(function() {
+   $('.j-del-promo').click(function(){
+       if (confirm('Удалить этот кейс?')) {
+           var id = $(this).attr('data-case-id');
+           var _self = this;
+           $.post('/web-admin/cases/del', {_token: csrf_token, id: id}, function(data){
+               if (data.result == 'error') {
+                   alert(data.message);
+               } else {
+                $(_self).closest('tr').remove();
+               }
+           });
+       }
+       return false;
+   });
+});
+</script>
 @endsection

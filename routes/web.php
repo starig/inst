@@ -55,7 +55,11 @@ Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => [
     Route::get('/messages', 'PageController@messages');
     Route::get('/types-of-promotions', 'Promotions@index')->name('admin.promotions');
     Route::get('/cases', 'CasesController@cases')->name('admin.cases');
+    Route::post('/cases/del', 'CasesController@del');
     Route::get('/add-case', 'CasesController@addCase')->name('admin.addCase');
+    Route::post('/add-case', 'CasesController@create')->name('admin.addCasePost');
+    Route::get('/cases/edit/{case}', 'CasesController@edit')->name('admin.cases.edit');
+    Route::post('/cases/update/{case}', 'CasesController@update')->name('admin.cases.update');
     Route::get('/add-promotion', 'Promotions@addPromotion')->name('admin.promotion_link');
     Route::post('/types-of-promotions/add', 'Promotions@add')->name('admin.addPromotion');
     Route::get('/types-of-promotions/edit/{price}', 'Promotions@edit')->name('admin.promotion.edit');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Price;
 use App\Order;
+use App\MyCase;
+use App\CaseOrder;
 
 class OrderController extends Controller
 {
@@ -78,7 +80,40 @@ class OrderController extends Controller
     public function prizes()
     {
         return view('prizes', [
-            'orders' => Order::where('user_id', \Auth::user()->id)->orderBy('id', 'dest')->get()
+            'prizes' => CaseOrder::where('user_id', \Auth::user()->id)->orderBy('id', 'dest')->get()
         ]);
     }
+    
+    public function prizeAdd(Request $request)
+    {
+        $case = MyCase::findOrFail($request->case_id);
+        $user = \Auth::user();
+        
+        if ($user->amount < $case->price) {
+            //$errors['count'] = "* На вашем счету недостаточно средств";
+            return response()->json([
+                'result' => 'error',
+                'message' => 'На вашем счету недостаточно средств',
+            ]);
+        }
+        
+        $prize = rand($case->min_count, $case->max_count);
+        
+        $order = CaseOrder::create([
+            'user_id' => $user->id,
+            'case_id' => $case->id,
+            'count' => $prize,
+            'link' => $request->link,
+            'is_completed' => 0,
+        ]);
+        
+        $user->amount = $user->amount - $case->price;
+        $user->save();
+        
+        return response()->json([
+            'result' => 'ok',
+            'prize' => $prize
+        ]);
+    }
+    
 }

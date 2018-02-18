@@ -38,7 +38,7 @@
 													<label class="control-label">Тип кейса <span class="required">*</span></label>
 													<select name="price_id" id="adminPrices" class="form-control span4">
                                                         @foreach($prices as $price)
-                                                        <option class="optionPrices" value="5" @if(old('price_id', $case->price_id) == $price->id) selected="selected" @endif>{{ $price->name }}</option>
+                                                        <option class="optionPrices" value="{{ $price->id }}" @if(old('price_id', $case->price_id) == $price->id) selected="selected" @endif>{{ $price->name }}</option>
                                                         @endforeach
                                                     </select>
 

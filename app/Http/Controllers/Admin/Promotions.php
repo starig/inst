@@ -8,6 +8,7 @@ use App\Price;
 use App\Order;
 use Validator;
 use Illuminate\Validation\Rule;
+use App\MyCase;
 
 class Promotions extends Controller
 {
@@ -91,6 +92,13 @@ class Promotions extends Controller
             return response()->json([
                 'result' => 'error',
                 'message' => 'На этом типе накруток есть невыполненные заказы'
+            ]);
+        }
+        
+        if (MyCase::where('price_id', $request->id)->first()) {
+            return response()->json([
+                'result' => 'error',
+                'message' => 'На этом типе накруток есть кейсы'
             ]);
         }
         

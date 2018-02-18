@@ -12,29 +12,21 @@
                     <tr>
                         <th>Заказ</th>
                         <th>Кейс</th>
-                        <th>Выйгрыш</th>
+                        <th>Выигрыш</th>
                         <th>Дата заказа</th>
                         <th>Статус</th>
                     </tr>
                 </thead>
                 <tbody>
-                  <tr class="success">   
-                    <td>7</td>
-                    <td>Название кейса</td>
-                    <td>Выигранное кол-во</td>
-                    <td>01.01.1970</td>
-                    <td>Закончен</td>
+                    @foreach($prizes as $prize)
+                  <tr class="@if($prize->is_completed) success @else danger @endif">   
+                    <td>{{ $prize->id }}</td>
+                    <td>{{ $prize->mycase->name }}</td>
+                    <td>{{ $prize->count }}</td>
+                    <td>{{ date('d.m.Y', strtotime($prize->created_at)) }}</td>
+                    <td>@if($prize->is_completed)Закончен @else Выполняется @endif</td>
                   </tr>
-                  <!--
-                  <tr class="success">   
-                    <td>2</td>
-                    <td>2134</td>
-                    <td>Лайки</td>
-                    <td>2000</td>
-                    <td>01.01.1970</td>
-                    <td>Закончен</td>
-                  </tr>
-                  -->
+                    @endforeach
                 </tbody>
             </table>
         </div>

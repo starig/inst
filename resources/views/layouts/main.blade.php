@@ -34,7 +34,7 @@
                     <li class="dropdown-header">{{ \Auth::user()->login }}</li>
                     <li class=""><a href="/balance">Баланс: {{ \Auth::user()->amount }}</a></li>
                     <li><a href="/orders">Заказы</a></li>
-                    <li><a href="/prizes">Выйгрыши</a></li>
+                    <li><a href="/prizes">Открытые кейсы</a></li>
                       @endif
                     <li class="divider"></li>
                       @if(!\Auth::check())

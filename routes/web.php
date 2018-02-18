@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/orders', 'OrderController@orders')->name('orders');
     Route::get('/prizes', 'OrderController@prizes')->name('prizes');
+    Route::post('/prizes/add', 'OrderController@prizeAdd');
     
     Route::get('/free-kassa-success', 'PageController@acceptedPayment');
     
@@ -51,7 +52,7 @@ Route::post('/free-kassa-result', 'FkController@result');
 
 Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'] ], function () {
     Route::get('/', 'OrderController@index')->name('admin.index');
-    Route::get('/caseOrders', 'CasesController@caseOrders')->name('admin.caseOrders');
+    Route::get('/case-orders', 'CasesController@caseOrders')->name('admin.caseOrders');
     Route::get('/messages', 'PageController@messages');
     Route::get('/types-of-promotions', 'Promotions@index')->name('admin.promotions');
     Route::get('/cases', 'CasesController@cases')->name('admin.cases');
@@ -66,6 +67,7 @@ Route::group(['prefix' => 'web-admin', 'namespace' => 'Admin', 'middleware' => [
     Route::post('/types-of-promotions/update/{price}', 'Promotions@update')->name('admin.promotion.update');
     Route::post('/types-of-promotion/del', 'Promotions@del');
     Route::post('/orders/ready', 'OrderController@ready');
+    Route::post('/case-orders/ready', 'CasesController@ready');
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -106,7 +106,7 @@
                                         </span>
                                     	<ul class="inner-nav">
                                         	<li @if(\Request::path() == 'web-admin')class="active" @endif><a href="/web-admin"><i class="icol-grid"></i> Заказы</a></li>
-                                            <li @if(\Request::path() == 'web-admin/caseOrders')class="active" @endif><a href="/web-admin/caseOrders"><i class="icol-grid"></i> Заказы(кейсы)</a></li>
+                                            <li @if(\Request::path() == 'web-admin/case-orders')class="active" @endif><a href="/web-admin/case-orders"><i class="icol-grid"></i> Заказы(кейсы)</a></li>
                                         	<li @if(\Request::path() == 'web-admin/messages')class="active" @endif><a href="/web-admin/messages"><i class="icol-email"></i> Сообщения</a></li>
                                             
                                         </ul>

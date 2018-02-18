@@ -27,11 +27,12 @@ class CasesController extends Controller
     
     public function caseOrders(){
         return view('admin.caseOrders', [
-            'tab' => 'main'
+            'tab' => 'main',
+            'prizes' => CaseOrder::get(),
         ]);
     }
     
-    public function create(Request $request){
+    public function create(Request $request){       
         $messages = [
             'required' => 'Поле :attribute обязательно.',
             'unique' => 'Значение поля :attribute уже есть в базе данных.',
@@ -110,5 +111,16 @@ class CasesController extends Controller
         $case->update($request->all());
         
         return redirect()->route('admin.cases');
+    }
+    
+    public function ready(Request $request) {
+        $order = CaseOrder::findOrFail($request->id);
+        
+        $order->is_completed = $request->is_completed;
+        $order->save();
+        
+        return response()->json([
+            'result' => 'ok'
+        ]);
     }
 }

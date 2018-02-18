@@ -38,7 +38,7 @@
 													<label class="control-label">Тип кейса <span class="required">*</span></label>
 													<select name="price_id" id="adminPrices" class="form-control span4">
                                                         @foreach($prices as $price)
-                                                        <option class="optionPrices" value="5" >{{ $price->name }}</option>
+                                                        <option class="optionPrices" value="{{ $price->id }}" >{{ $price->name }}</option>
                                                         @endforeach
                                                     </select>
 

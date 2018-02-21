@@ -19,9 +19,9 @@
           <img src="img/Rick-and-Morty_14--1680x1050.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Наш сервис позволяет быстро поднять в топ ваш аккаунт</h1>
-              <p>На ваш аккаунт подписывается большое количество пользователей за указанный срок</p>
-              <p><a class="btn btn-lg btn-danger" href="/order" role="button">Сделать заказ</a></p>
+              <h1>Мы предоставляем вам возможность испытать свою удачу!</h1>
+              <p>Только у нас можно открыть кейсы с подписчиками, лайками и др.</p>
+              <p><a class="btn btn-lg btn-danger" href="/cases" role="button">Открыть кейс</a></p>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Сотни довольных клиентов</h1>
-              <p>Более 500 человек уже в топе инстаграма</p>
+              <p>Более 3000 человек уже в топе инстаграма</p>
               <p><a class="btn btn-lg btn-danger" href="/balance" role="button">Пополнить баланс</a></p>
             </div>
           </div>
@@ -55,7 +55,7 @@
         <div class="col-lg-4">
           <img class="img-circle imgCases" src="img/like.jpg" alt="Generic placeholder image">
           <h2>Лайки</h2>
-          <p>Всего за 100 рублей вы можете получить 5000 лайков!</p>
+          <p>Получи 10000 лайков за смешную сумму</p>
           <p><a class="btn btn-default" href="/order" role="button">Открыть &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -67,7 +67,7 @@
         <div class="col-lg-4">
           <img class="img-circle imgCases" src="img/eey.jpg" alt="Generic placeholder image">
           <h2>Охват</h2>
-          <p>Ваши посты посмотрит более 10000 людей за сутки!</p>
+          <p>Ваши публикации посмотрит более 10000 людей за сутки!</p>
           <p><a class="btn btn-default" href="/order" role="button">Открыть &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -79,35 +79,11 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Я стал самым популярным в школе. <span class="text-muted">Всего за неделю</span></h2>
-          <p class="lead">Как-то вечером я задумался на тему продажи рекламы в инстаграме. Но для этого мне нужно было достаточное количество подписчиков. Вложил небольшую сумму, сделав заказ на этом сайте. Я окупился за 2 дня.</p>
+          <h2 class="featurette-heading">Я стал самым популярным в школе. <span class="text-muted">Всего за 2 дня</span></h2>
+          <p class="lead">Я покупал пиары у разных инста-блогеров за 500-1000 рублей. Попробовав на этом сайте открыть кейс, я был в шоке! Моментальные лайки и подписчики. Теперь я сам продаю рекламу и зарабатываю деньги! Советую всем!</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="img/instaProfile.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="img/2.jpg" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="img/2.jpg" alt="Generic placeholder image">
         </div>
       </div>
 

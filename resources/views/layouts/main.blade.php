@@ -66,7 +66,7 @@
    @yield('content')
 
       <!-- FOOTER -->
-      <footer @if(\Request::path() != '/')class="navbar-fixed-bottom row-fluid" @endif>
+      <footer @if(\Request::path() != '/' && \Request::path() !='cases')class="navbar-fixed-bottom row-fluid" @endif>
         @if(\Request::path() == '/')<p class="pull-right"><a href="#">Наверх</a></p> @endif
         <p>&copy; 2018 StaRIG</p>
         <p><a href="//www.free-kassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/22.png"></a></p>
